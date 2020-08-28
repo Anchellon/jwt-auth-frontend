@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>New User ?</h2>
+    <br>
+    <h5> Sign Up Now. </h5>
+    <br>
+    <form action="/tokenauth" #myForm="ngForm" ngNativeValidate>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" name="email" class="form-control" id="email" required [(ngModel)]="signUpData.email"
+                #email="ngModel">
+            <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+                Enter a valid Email
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" name="password" class="form-control" id="pwd" required [(ngModel)]="signUpData.password"
+                #password="ngModel">
+        </div>
+
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" required
+                [(ngModel)]="signUpData.first_name" #first_name="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" required
+                [(ngModel)]="signUpData.last_name" #last_name="ngModel">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    hi
+
+</div>
+{{signUpData.email}}
+hi
+hi
+

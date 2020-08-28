@@ -1,0 +1,61 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <h2>New User ?</h2>
+    <br>
+    <h5> Sign Up Now. </h5>
+    <br>
+    <form action="/" #myForm="ngForm"  method="POST" (ngSubmit)="onSubmit(myForm)">
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" name="email" class="form-control" id="email" required #email="ngModel" [(ngModel)]="signUpData.email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+                Enter a valid Email
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" name="password" class="form-control" id="pwd" required #password="ngModel" [(ngModel)]="signUpData.password">
+            <div [hidden]="password.valid || password.untouched" class="alert alert-danger">
+                Enter a password
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" #first_name="ngModel" required [(ngModel)]="signUpData.first_name"> 
+            <div [hidden]="first_name.valid || first_name.untouched" class="alert alert-danger">
+                Enter First Name
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" required [(ngModel)]="signUpData.last_name" #last_name="ngModel">
+            <div [hidden]="last_name.valid || last_name.untouched" class="alert alert-danger">
+                Enter a Last Name
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" class="form-control" name="phone_number" id="phone_number" required [(ngModel)]="signUpData.phone_number" #phone_number="ngModel">
+            <div [hidden]="phone_number.valid || phone_number.untouched" class="alert alert-danger">
+                Enter a Phone Nummber
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">User Name:</label>
+            <input type="text" class="form-control" name="username" id="username" required [(ngModel)]="signUpData.username" #username="ngModel">
+            <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                Enter a username
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    hi
+    {{myForm.value |json}}
+    {{signUpData}}}
+</div>
+
+

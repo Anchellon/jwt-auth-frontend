@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <h2>Returning User ?</h2>
+    <br>
+    <h5>Sign In.</h5>
+    <br>
+    <form method="POST" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" name="email" required #mail="ngModel" [(ngModel)]="login_data.email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" name="password" required ngModel [(ngModel)]="login_data.password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    hi
+    {{loginForm.value |json}}
+    {{login_data|json}}
+</div>
+hi
+
+

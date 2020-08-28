@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Navbar</a>
+    <form class="form-inline" *ngIf="!logInStatus">
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-1"><a [routerLink]="['/signup']">Sign Up</a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-1"><a [routerLink]="['/login']">Login Template Form</a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-1"><a [routerLink]="['/signup-reactive']">SignUp Reactive Form</a></button>
+    </form>
+    <form class="form-inline" *ngIf="logInStatus" >
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-1" (click)="onLogOut()"><a >Log out</a></button>
+    </form>
+
+</nav>
+
+ 

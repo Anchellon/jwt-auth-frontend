@@ -1,0 +1,54 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <h2>New User ? Lets Do It Reactively</h2>
+    <br>
+    <h5> Sign Up Now... but Reactively </h5>
+    <br>
+    <form  method="POST" [formGroup]="customerForm">
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" formControlName="firstName" class="form-control"  id="first_name" > 
+        </div>
+        <!-- {{customerForm.get("firstName").errors|json}}  -->
+        
+        {{firstNameMessages}}   
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" formControlName="lastName" class="form-control" id="last_name"
+            >
+        </div>
+        {{lastNameMessages}}
+        <!-- {{customerForm.get("lastName").errors|json}} -->
+        <div formGroupName="emailField">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" formControlName="email" class="form-control" id="email">
+            </div>
+            {{emailMessages}}
+            <div class="form-group">
+                <label for="email">Confirm Email address:</label>
+                <input type="email" formControlName="confirmEmail" class="form-control" id="email">
+            </div>
+            {{cnfEmailMessages}}
+        </div>
+        {{customerForm.get('emailField').errors | json}}
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" formControlName="password" class="form-control" id="pwd" >
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" formControlName="phoneNumber" class="form-control"  id="phone_number">   
+        </div>
+        {{customerForm.get('phoneNumber').errors | json}}
+        <div class="form-group">
+            <label for="username">User Name:</label>
+            <input type="text" formControlName="username" class="form-control" id="username">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- {{customerForm.value |json}} -->
+    
+    <!-- {{customerForm.get("emailConfirm").errors|json}} -->
+</div>
